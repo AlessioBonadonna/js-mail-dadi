@@ -24,24 +24,25 @@
 //     }
 
 
-const emailValide = ["mail1@mail.com", "mail2@mail.com", "mail3@mail.com","pippo" ,"pippo1@mail.com"];
+const emailValide = ["mail1@mail.com", "mail2@mail.com", "mail3@mail.com"];
 let esito = document.querySelector('.esito')
 let btn = document.getElementById("login");
+
 btn.addEventListener("click", function () {
     let emailUtente = document.getElementById("mail").value;
+    let login;
     for (i = 0; i < emailValide.length; i++) {
         console.log(emailUtente);
 
         if (emailUtente == emailValide[i]) {
-            esito.innerHTML = "Puoi accedere"
-            break;
+            
+            login=true;
         }
 
-        else if (emailUtente == "") {
-            esito.innerHTML = "Inserisci l'Email"
+    
+    }if(login){
+        esito.innerHTML = "Puoi accedere"}
+        else{
+            esito.innerHTML= "email errata ";
         }
-        else {
-            esito.innerHTML = "Email non valida"
-        }
-    }
 })
